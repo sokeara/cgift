@@ -11,3 +11,34 @@
  *= require_self
  *= require_tree .
  */
+#wrapper{
+	width: 80%;
+	height: 500px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding: 0px 10px 10px 10px;
+}
+
+/* ---------------------------- Style of user ------------------------- */
+#form-user{
+	padding-top: 20px;
+}
+#user-info{
+	width: 100%;
+	height: auto;
+	background-color: #DBEAF9;
+	border-radius: 5px;
+	text-align: center;
+	/*border: 1px solid red;*/
+}
+.user-action{
+	width: 100%;
+	height: auto;
+}
+.tbl-user{
+	height: auto;
+}
+.field{
+	width: 50%;
+}
