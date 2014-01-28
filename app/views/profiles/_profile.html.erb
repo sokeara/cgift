@@ -1,0 +1,44 @@
+<div>
+<h4> Add profile </h4>
+<%= form_for [@user, @profile] do |p| %>
+	<table>
+		<tr>
+			<td><%= p.label :dob %></td>
+			<td>:</td>
+			<td><%= p.text_field :dob %></td>
+		</tr>
+		<tr>
+			<td><%= p.label :pob %></td>
+			<td>:</td>
+			<td><%= p.text_field :pob %></td>
+		</tr>
+		<tr>
+			<td><%= p.label :skills %></td>
+			<td>:</td>
+			<td><%= p.text_field :skills %></td>
+		</tr>
+		<tr>
+			<td><%= p.label :favorite %></td>
+			<td>:</td>
+			<td><%= p.text_field :favorite %></td>
+		</tr>
+		<tr>
+			<td><%= p.label :dream %></td>
+			<td>:</td>
+			<td><%= p.text_field :dream %></td>
+		</tr>
+		<tr>
+			<td><%= p.label :current_job %></td>
+			<td>:</td>
+			<td><%= p.text_field :current_job %></td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<%= p.submit "Submit" %>
+				<%= link_to '<button>Back</button>'.html_safe, users_path %>
+			</td>
+		</tr>
+
+	</table>
+<% end %>
+</div>
