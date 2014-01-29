@@ -1,0 +1,42 @@
+<div id="wrapper">
+	<table>
+		<% @profiles.each do |p| %>
+		<tr>
+			<td>Date Of Birth</td>
+			<td>:</td>
+			<td><%= p.dob %></td>
+		</tr>
+		<tr>
+			<td>Place Of Birth</td>
+			<td>:</td>
+			<td><%= p.pob %></td>
+		</tr>
+		<tr>
+			<td>Skills</td>
+			<td>:</td>
+			<td><%= p.skills %></td>
+		</tr>
+		<tr>
+			<td>Favorite</td>
+			<td>:</td>
+			<td><%= p.favorite %></td>
+		</tr>
+		<tr>
+			<td>Dream</td>
+			<td>:</td>
+			<td><%= p.dream %></td>
+		</tr>
+		<tr>
+			<td>Current Job</td>
+			<td>:</td>
+			<td><%= p.current_job %></td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<p><%= link_to "Back", users_path %></p>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+		
+</div>
