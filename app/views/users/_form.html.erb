@@ -1,0 +1,57 @@
+<%= form_for(@user) do |u| %>
+	<table class="tbl-user">
+		<tr>
+			<td><%= u.label :first_name %></td>
+			<td>:</td>
+			<td><%= u.text_field :first_name, :placeholder => 'Enter first name' %></td>
+		</tr>
+		<tr>
+			<td><%= u.label :last_name %></td>
+			<td>:</td>
+			<td><%= u.text_field :last_name, :placeholder => 'Enter last name' %></td>
+		</tr>
+		<tr>
+			<td><%= u.label :gender %></td>
+			<td>:</td>
+			<td>	
+			    <%= u.label :gender, "Male", :value => "Male"  %>
+			    <%= u.radio_button :gender, 'Male' %>
+			    <%= u.label :gender, "Female", :value => "Female" %>
+			    <%= u.radio_button :gender, 'Female' %>
+			</td>
+		</tr>
+		<tr>
+			<td><%= u.label :username %></td>
+			<td>:</td>
+			<td><%= u.text_field :username, :placeholder => 'Enter username' %></td>
+		</tr>
+		<tr>
+			<td><%= u.label :password %></td>
+			<td>:</td>
+			<td><%= u.password_field :password, :placeholder => 'Enter password' %></td>
+		</tr>
+		<tr>
+			<td><%= u.label :email %></td>
+			<td>:</td>
+			<td><%= u.email_field :email, :placeholder => 'Enter email address' %></td>
+		</tr>
+		<tr>
+			<td><%= label_tag 'Phone Number' %></td>
+			<td>:</td>
+			<td><%= u.text_field :phone_num, :placeholder => 'Enter phone number' %></td>
+		</tr>
+		<tr>
+			<td><%= u.label :address %></td>
+			<td>:</td>
+			<td>
+				<%= u.text_area :address, :placeholder => 'Write your address here...', size: "50x5" %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<%= u.submit %>
+				<%= link_to '<button>Back</button>'.html_safe, users_path %>
+			</td>
+		</tr>
+	</table>
+<% end %> 

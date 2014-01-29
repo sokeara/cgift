@@ -12,10 +12,11 @@
  */
 #wrapper{
 	width: 80%;
-	height: 500px;
+	height: auto;
 	border: 1px solid #CCC;
 	border-radius: 5px;
 	margin: 0 auto;
+	min-height: 500px;
 	padding: 0px 10px 10px 10px;
 }
 
