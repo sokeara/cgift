@@ -29,7 +29,11 @@
 					<span>|</span>
 					<span><%= link_to "Delete", user_path(user), method: :delete, data: {confirm: "Are you sure want to delete this record?"} %></span>
 					<span>|</span>
-					<span><%= link_to "Profile", user_path(user) %></span>
+					<% if user.profiles.count > 0%>
+						<span><%= link_to "View Profile", user_profiles_path(user) %></span>
+					<% else %>
+						<span><%= link_to "Add Profile", new_user_profile_path(user) %></span>
+					<% end %>
 				</td>
 			</tr>
 		<% end %>
