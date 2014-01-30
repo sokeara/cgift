@@ -1,7 +1,11 @@
 <div id="wrapper">
-	<h1>Administrator Page</h1>
-	
-	<%= link_to '<button type="button" class="btn btn-info">Add New</button>'.html_safe, new_user_path %>
+	<div id='home-head'>
+		<h1>Administrator Page</h1>
+	</div>
+		
+	<p style="float:right;">
+		<%= link_to '<button type="button" class="btn btn-warning">Add New</button>'.html_safe, new_user_path %>
+	</p>
 	<div id="form-user">
 		<!-- <table id="user-info" border='1' cellpadding="0" cellspacing="0"> -->
 		<table class="table table-hover">
@@ -25,22 +29,17 @@
 				<td><%= user.phone_num %></td>
 				<td><%= user.address %></td>
 				<td colspan="2">
-					<span><%= link_to "Edit", edit_user_path(user) %></span>
-					<span>|</span>
-					<span><%= link_to "Delete", user_path(user), method: :delete, data: {confirm: "Are you sure want to delete this record?"} %></span>
-					<span>|</span>
+					<span><%= link_to '<button class="btn btn-success">Edit</button>'.html_safe, edit_user_path(user) %></span>
 					<% if user.profiles.count > 0%>
-						<span><%= link_to "View Profile", user_profiles_path(user) %></span>
+						<span><%= link_to '<button class="btn btn-success">View Profile</button>'.html_safe, user_profiles_path(user) %></span>
 					<% else %>
-						<span><%= link_to "Add Profile", new_user_profile_path(user) %></span>
+						<span><%= link_to '<button class="btn btn-success">Add Profile</button>'.html_safe, new_user_profile_path(user) %></span>
 					<% end %>
+					<span><%= link_to '<button class="btn btn-danger">Delete</button>'.html_safe, user_path(user), method: :delete, data: {confirm: "Are you sure want to delete this record?"} %></span>
 				</td>
 			</tr>
 		<% end %>
 			
 		</table>
-			
-
-		
 	</div>
 </div><!-- end wrapper -->

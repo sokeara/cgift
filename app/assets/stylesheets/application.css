@@ -11,17 +11,27 @@
  *= require_self
  *= require_tree .
  */
-
-#wrapper{
-	width: 80%;
+ #wrapper{
+	width: 95%;
 	height: auto;
 	border: 1px solid #00AFF0;
 	border-radius: 5px;
 	margin: 15px auto 0;
 	min-height: 500px;
 	padding: 0px 10px 10px 10px;
+	/*background-color: #ddd;
+	opacity:0.7;
+	filter:alpha(opacity=40);  For IE8 and earlier */
 }
 
+#home-head {
+    background-color: #16C5FE;
+    color: #FFFFFF;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 1px 0 0 20px;
+    width: 100%;
+}
 /* ---------------------------- Style of user ------------------------- */
 #form-user{
 	padding-top: 20px;
@@ -51,7 +61,7 @@
     color: #fff;
     cursor: pointer;
     list-style: none outside none;
-    margin: 10px 0 10px 40px;
+    margin: 10px 0 10px -65px;
     padding: 8px 15px;
 }
 
@@ -61,5 +71,9 @@
 .breadcrumb-menu a:hover{
 	color: #fff;
 }
+h1{
+	color: #563D7C;
+}
+
 /*--------------------------- style override ------------------------------*/
 

@@ -1,6 +1,7 @@
 <div id="wrapper">
-	<%= link_to '<button type="button" class="btn btn-info">Edit</button>'.html_safe, edit_user_profile_path(@user, @profile) %>
-	<table>
+<div align='center'>
+	<h1>Profile</h1>
+	<table class="table table-hover">
 		<tr>
 			<td>Date Of Birth</td>
 			<td>:</td>
@@ -33,9 +34,10 @@
 		</tr>
 		<tr>
 			<td colspan="3">
-				<p><%= link_to '<input value="Back" type="button" class="btn btn-info" />'.html_safe, users_path %></p>
+				<%= link_to '<button type="button" class="btn btn-info">Edit</button>'.html_safe, edit_user_profile_path(@user, @profile) %>
+				<%= link_to '<button type="button" class="btn btn-info">Back</button>'.html_safe, users_path %>
 			</td>
 		</tr>
 	</table>
-		
+</div>		
 </div>

@@ -35,6 +35,8 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find_by_id(params[:id])
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Edit User"
 	end
 
 	def update
