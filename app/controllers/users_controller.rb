@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
+
 	def index
 		@users = User.all
+		add_breadcrumb "Home", users_path
 	end
 
 	def new
 		@user = User.new
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Add new"
 	end
 
 	def create
+
 		@user = User.new
 
 		@user.user_id = params[:user][:user_id]

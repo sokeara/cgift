@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
-#install boostrap
+# install boostrap
 gem 'bootstrap-sass'
 group :development do
   gem 'rails_layout'
 end
+
+# install barcrumbs
+gem "breadcrumbs_on_rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
