@@ -1,6 +1,4 @@
-<div>
-<h4> Add profile </h4>
-<%= form_for [@user, @profile] do |p| %>
+<%= form_for [@user,@profile] do |p| %>
 	<table>
 		<tr>
 			<td><%= p.label :dob %></td>
@@ -34,11 +32,9 @@
 		</tr>
 		<tr>
 			<td colspan="3">
-				<%= p.submit "Submit" %>
-				<%= link_to '<button>Back</button>'.html_safe, users_path %>
+				<%= p.submit "Submit", class: "btn btn-info" %>
+				<%= link_to '<input value="Back" type="button" class="btn btn-info" />'.html_safe, users_path %>
 			</td>
 		</tr>
-
 	</table>
 <% end %>
-</div>

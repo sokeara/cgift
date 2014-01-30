@@ -24,9 +24,13 @@ class UsersController < ApplicationController
 		@user.email = params[:user][:email]
 		@user.phone_num = params[:user][:phone_num]
 		@user.address = params[:user][:address]
-		@user.save
-		redirect_to users_path
-		flash.notice = "#{@user.username} has been created successfully!"
+		if @user.save
+			flash.notice = "#{@user.username} has been created successfully!"
+			redirect_to users_path
+		else
+			flash.alert = "Save failed! Please fill all of the input fields!"
+			render :new
+		end
 	end
 
 	def edit
@@ -45,9 +49,13 @@ class UsersController < ApplicationController
 		@user.email = params[:user][:email]
 		@user.phone_num = params[:user][:phone_num]
 		@user.address = params[:user][:address]
-		@user.save
-		redirect_to users_path
-		flash.notice = "#{@user.username} has been updated!"
+		if @user.save
+			redirect_to users_path
+			flash.notice = "#{@user.username} has been updated!"
+		else 
+			render :edit
+			flash.alert = "Update failed! Please try again!"
+		end
 	end
 
 	def destroy
