@@ -1,41 +1,65 @@
 <div id="wrapper">
-	<%= link_to '<button type="button" class="btn btn-info">Edit</button>'.html_safe, edit_user_profile_path(@user, @profile) %>
-	<table>
+<div align='center'>
+	<h1>Profile</h1>
+	<table class="table table-hover">
 		<tr>
-			<td>Date Of Birth</td>
-			<td>:</td>
+			<th>First Name :</th>
+			<td><%= @user.first_name %></td>
+		</tr>
+		<tr>
+			<th>Last Name :</th>
+			<td><%= @user.last_name %></td>
+		</tr>
+		<tr>
+			<th>Username :</th>
+			<td><%= @user.username %></td>
+		</tr>
+		<tr>
+			<th>Gender :</th>
+			<td><%= @user.gender %></td>
+		</tr>
+		<tr>
+			<th>Email :</th>
+			<td><%= @user.email %></td>
+		</tr>
+		<tr>
+			<th>Phone Number :</th>
+			<td><%= @user.phone_num %></td>
+		</tr>
+		<tr>
+			<th>Address :</th>
+			<td><%= @user.address %></td>
+		</tr>
+		<tr>
+			<th>Date Of Birth :</th>
 			<td><%= @profile.dob %></td>
 		</tr>
 		<tr>
-			<td>Place Of Birth</td>
-			<td>:</td>
+			<th>Place Of Birth :</th>
 			<td><%= @profile.pob %></td>
 		</tr>
 		<tr>
-			<td>Skills</td>
-			<td>:</td>
+			<th>Skill :</th>
 			<td><%= @profile.skills %></td>
 		</tr>
 		<tr>
-			<td>Favorite</td>
-			<td>:</td>
+			<th>Favorite :</th>
 			<td><%= @profile.favorite %></td>
 		</tr>
 		<tr>
-			<td>Dream</td>
-			<td>:</td>
+			<th>Dream :</th>
 			<td><%= @profile.dream %></td>
 		</tr>
 		<tr>
-			<td>Current Job</td>
-			<td>:</td>
+			<th>Current Job :</th>
 			<td><%= @profile.current_job %></td>
 		</tr>
 		<tr>
 			<td colspan="3">
-				<p><%= link_to '<input value="Back" type="button" class="btn btn-info" />'.html_safe, users_path %></p>
+				<%= link_to '<button type="button" class="btn btn-info">Edit</button>'.html_safe, edit_user_profile_path(@user, @profile) %>
+				<%= link_to '<button type="button" class="btn btn-info">Back</button>'.html_safe, users_path %>
 			</td>
 		</tr>
 	</table>
-		
+</div>		
 </div>

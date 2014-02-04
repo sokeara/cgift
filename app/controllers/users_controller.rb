@@ -35,6 +35,8 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find_by_id(params[:id])
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Edit User"
 	end
 
 	def update
@@ -54,7 +56,7 @@ class UsersController < ApplicationController
 			flash.notice = "#{@user.username} has been updated!"
 		else 
 			render :edit
-			flash.alert = "Update failed! Please try again! #{@user.errors.full_messages.to_sentence}"
+			flash.alert = "Update failed! Please try again!"
 		end
 	end
 

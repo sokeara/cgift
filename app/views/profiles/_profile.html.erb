@@ -1,12 +1,13 @@
 <%= form_for [@user,@profile] do |p| %>
+<div>
 	<table>
 		<tr>
-			<td><%= p.label :dob %></td>
+			<td><%= label_tag 'Date of birth' %></td>
 			<td>:</td>
 			<td><%= p.text_field :dob %></td>
 		</tr>
 		<tr>
-			<td><%= p.label :pob %></td>
+			<td><%= label_tag 'Place of birth' %></td>
 			<td>:</td>
 			<td><%= p.text_field :pob %></td>
 		</tr>
@@ -37,4 +38,5 @@
 			</td>
 		</tr>
 	</table>
+</div>
 <% end %>

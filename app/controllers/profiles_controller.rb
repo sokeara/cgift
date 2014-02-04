@@ -1,18 +1,23 @@
 class ProfilesController < ApplicationController
 
 	def index
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Profile"
 		@user = User.find_by_id(params[:user_id])
 		# @profiles = @user.profiles
 		@profile = Profile.find_by_user_id(params[:user_id])
 	end
 
 	def new
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Add New Profile"
 		@user = User.find_by_id(params[:user_id])
 		@profile = Profile.new
 	end
 
 	def create
 		@user = User.find_by_id(params[:user_id])
+
 		@profile = @user.profiles.new
 		@profile.dob = params[:profile][:dob]
 		@profile.pob = params[:profile][:pob]
@@ -37,6 +42,8 @@ class ProfilesController < ApplicationController
 	def edit
 		@user = User.find_by_id(params[:user_id])
 		@profile = Profile.find_by_id(params[:id])
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Edit Profile"
 		# will return as array
 		# @profile = @user.profiles
 	end
