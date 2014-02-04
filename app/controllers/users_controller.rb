@@ -56,7 +56,7 @@ class UsersController < ApplicationController
 			flash.notice = "#{@user.username} has been updated!"
 		else 
 			render :edit
-			flash.alert = "Update failed! Please try again! #{@user.errors.full_messages.to_sentence}"
+			flash.alert = "Update failed! Please try again!"
 		end
 	end
 
