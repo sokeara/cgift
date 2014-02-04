@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20140128095209) do
     t.string   "gender"
     t.string   "username"
     t.string   "password"
+    t.string   "email"
     t.integer  "phone_num"
     t.string   "address"
-    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
