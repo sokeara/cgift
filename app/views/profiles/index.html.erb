@@ -1,7 +1,10 @@
 <div id="wrapper">
 <div align='center'>
 	<h1>Profile</h1>
-	<%= image_tag @user.avatar.url %>
+	<div id='avatar'>
+		<%= image_tag @user.avatar.url %>
+	</div>
+	
 	<table class="table table-hover">
 		<tr>
 			<th>First Name :</th>
