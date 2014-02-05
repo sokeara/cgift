@@ -75,5 +75,15 @@ h1{
 	color: #563D7C;
 }
 
+#avatar{
+	width: 150px;
+	height: 150px;
+	border: 1px solid #563D7C;
+	padding: 5px;
+	float: left;
+	margin-bottom: 15px;
+	border-radius: 5px;
+}
+
 /*--------------------------- style override ------------------------------*/
 
