@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :profiles, :dependent => :destroy
-
+  has_attached_file :avatar, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png', 'image/jpg']
   validates_confirmation_of :password
   attr_accessor :password
   # Check duplicate or existing email (Customize)

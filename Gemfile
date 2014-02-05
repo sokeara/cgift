@@ -10,7 +10,7 @@ end
 gem "breadcrumbs_on_rails"
 
 # install paperclip for upload image
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", "~> 3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

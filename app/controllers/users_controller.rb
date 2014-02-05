@@ -13,8 +13,8 @@ class UsersController < ApplicationController
 
 	def create
 
+		# @user = User.create(user_params)
 		@user = User.new
-
 		@user.user_id = params[:user][:user_id]
 		@user.first_name = params[:user][:first_name]
 		@user.last_name = params[:user][:last_name]
@@ -24,6 +24,8 @@ class UsersController < ApplicationController
 		@user.email = params[:user][:email]
 		@user.phone_num = params[:user][:phone_num]
 		@user.address = params[:user][:address]
+		@user.avatar = params[:user][:avatar]
+		debugger
 		if @user.save
 			flash.notice = "#{@user.username} has been created successfully!"
 			redirect_to users_path
@@ -70,6 +72,15 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find_by_id(params[:id])
 		@profile = Profile.new
+	end
+
+	private
+
+	# Use strong_parameters for attribute whitelisting
+	# Be sure to update your create() and update() controller methods.
+
+	def user_params
+	  params.require(:user).permit(:avatar)
 	end
 
 end
