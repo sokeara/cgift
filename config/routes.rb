@@ -1,9 +1,12 @@
 Cgift::Application.routes.draw do
   resources :users do
     resources :profiles
+    resources :items
   end
+  resources :items
 
   root to: 'users#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

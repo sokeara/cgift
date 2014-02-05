@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :profiles, :dependent => :destroy
   has_attached_file :avatar, :default_url => "/images/:style/missing.png"
+
+  # add field avatar to table
+
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png', 'image/jpg']
   validates_confirmation_of :password
   attr_accessor :password
@@ -11,7 +14,7 @@ class User < ActiveRecord::Base
   # it will be possible to update email with a duplicated value
   validates :email, uniqueness: true, on: :create
   validates :password, presence: true, on: :create
-  validates_length_of :password, minimum: 8, maximum: 15, on: :create
+  validates_length_of :password, minimum: 3, maximum: 10, on: :create
   # validates :password, allow_blank: true, on: :update
   validates :phone_num, numericality: true
 

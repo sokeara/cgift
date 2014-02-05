@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20140204091756) do
 
+  create_table "items", force: true do |t|
+    t.integer  "id_item"
+    t.string   "name_item"
+    t.string   "img_item"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "profiles", force: true do |t|
     t.string   "dob"
     t.string   "pob"

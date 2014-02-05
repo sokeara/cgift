@@ -1,0 +1,22 @@
+
+	
+			<div id="container">
+				<h1>All item</h1>
+					<% @items.each do |items|%>
+					<div class="col-md-2" id="image">
+						<%= image_tag(items.img_item) %>
+						<center><%= items.name_item %><br/></center>
+						<%= link_to "Edit",edit_item_path(items) %> || 
+						<%= link_to "Delete" , item_path(items), method: :delete , data:{confirm: "Are you want to delete?"} %>
+						<%= link_to '<button>Send Email</button>'.html_safe,new_item_path %>
+						
+					</div>					
+					<% end %>	
+			</div>
+			<div class="col-md-12">
+				<%= link_to '<button>Add Item</button>'.html_safe,new_item_path %>
+			</div>
+		
+		
+		
+
