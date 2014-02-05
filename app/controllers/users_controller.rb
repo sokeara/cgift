@@ -53,6 +53,12 @@ class UsersController < ApplicationController
 		@user.email = params[:user][:email]
 		@user.phone_num = params[:user][:phone_num]
 		@user.address = params[:user][:address]
+		if @user.avatar
+			# For delete image when update
+			@user.avatar = nil
+			# For add new image just update
+			@user.avatar = params[:user][:avatar]
+		end
 		if @user.save
 			redirect_to users_path
 			flash.notice = "#{@user.username} has been updated!"
