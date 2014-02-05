@@ -25,7 +25,6 @@ class UsersController < ApplicationController
 		@user.phone_num = params[:user][:phone_num]
 		@user.address = params[:user][:address]
 		@user.avatar = params[:user][:avatar]
-		debugger
 		if @user.save
 			flash.notice = "#{@user.username} has been created successfully!"
 			redirect_to users_path
