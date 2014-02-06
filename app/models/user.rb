@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :profiles, :dependent => :destroy
+  has_many :items, :dependent => :destroy
+
+
   has_attached_file :avatar, :default_url => "/images/:style/missing.png"
 
   # add field avatar to table
@@ -28,4 +31,5 @@ class User < ActiveRecord::Base
     end
     return true
   end
+  
 end
