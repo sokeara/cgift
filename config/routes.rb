@@ -3,7 +3,7 @@ Cgift::Application.routes.draw do
     resources :profiles
     resources :items
   end
-  resources :items
+  # resources :items
 
   root to: 'users#index'
   
