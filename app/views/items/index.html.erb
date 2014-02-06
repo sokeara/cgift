@@ -1,7 +1,6 @@
-	<div id="wrapper">
-	<%= "There are #{@item.count}" %>
+<div id="wrapper">
+	<h3><%= "There are #{@item.count} item(s)" %></h3>
 	<% if @item.count > 0 %>
-	<h1>All item</h1>
 		<% @items.each do |items|%>
 		<div class="col-md-2" id="image">
 			<%= image_tag(items.img_item) %>
@@ -12,7 +11,7 @@
 			
 		</div>					
 		<% end %>
-	<%end%>	
+	<% end %>	
 
 	<div class="col-md-12">
 		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user) %>

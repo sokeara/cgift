@@ -1,30 +1,31 @@
-
-<center>
-	<h1>Add new item form</h1>
-	<table>
-		<%= form_for(@item) do |item| %>
-		
-			<tr>
-				<td><%= item.label :id_item %></td>
-				<td>:</td>
-				<td><%= item.text_field :id_item %></td>
-			</tr>
-			<tr>
-				<td><%= item.label :name_item %></td>
-				<td>:</td>
-				<td><%= item.text_field :name_item %></td>
-			</tr>
-			<tr>
-				<td><%= item.label :img_item %></td>
-				<td>:</td>
-				<td><%= item.text_field :img_item %></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><%= item.submit %></td>
-			</tr>
-		<% end %>
-	</table>
-</center>
+<div id='wrapper'>
+	<center>
+		<h1>Add new item form</h1>
+		<table>
+			<%= form_for [@user, @item], :html => { :multipart => true } do |i| %>
+			
+				<tr>
+					<td><%= i.label :id_item %></td>
+					<td>:</td>
+					<td><%= i.text_field :id_item %></td>
+				</tr>
+				<tr>
+					<td><%= i.label :name_item %></td>
+					<td>:</td>
+					<td><%= i.text_field :name_item %></td>
+				</tr>
+				<tr>
+					<td><%= i.label :img_item %></td>
+					<td>:</td>
+					<td><%= i.text_field :img_item %></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td><%= i.submit %></td>
+				</tr>
+			<% end %>
+		</table>
+	</center>
+</div><!-- end #wrapper -->
 
