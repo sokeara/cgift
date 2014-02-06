@@ -1,17 +1,26 @@
 class ItemsController < ApplicationController
 	def index
-		@items = Item.all
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Item"
+		@user = User.find_by_id(params[:user_id])
+		# @item = @user.items
+		@item = Item.find_by_user_id(params[:user_id])
 	end
+
 	def new
-		@items = Item.new
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Add New item"
+		@user = User.find_by_id(params[:user_id])
+		@item = Item.new
 	end
+
 	def create
-		@items = Item.new
-		@items.id_item = params[:item][:id_item]
-		@items.name_item = params[:item][:name_item]
-		@items.img_item = params[:item][:img_item]
-		@items.save
-		if @items.save
+		@item = Item.find_by_id(params[:user_id])
+		@item.id_item = params[:item][:id_item]
+		@item.name_item = params[:item][:name_item]
+		@item.img_item = params[:item][:img_item]
+		@item.save
+		if @item.save
 			flash[:notice] = "Data sucessful to save in our system!"
 			redirect_to items_path
 		else
