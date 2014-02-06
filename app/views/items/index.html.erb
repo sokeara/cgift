@@ -1,21 +1,24 @@
+	<div id="wrapper">
+	<%= "There are #{@item.count}" %>
+	<% if @item.count > 0 %>
+	<h1>All item</h1>
+		<% @items.each do |items|%>
+		<div class="col-md-2" id="image">
+			<%= image_tag(items.img_item) %>
+			<center><%= items.name_item %><br/></center>
+			<%= link_to "Edit",edit_user_item_path(items) %> || 
+			<%= link_to "Delete" , user_item_path(items), method: :delete , data:{confirm: "Are you want to delete?"} %>
+			<%= link_to '<button>Send Email</button>'.html_safe,new_item_path %>
+			
+		</div>					
+		<% end %>
+	<%end%>	
 
-	
-			<div id="container">
-				<h1>All item</h1>
-					<% @items.each do |items|%>
-					<div class="col-md-2" id="image">
-						<%= image_tag(items.img_item) %>
-						<center><%= items.name_item %><br/></center>
-						<%= link_to "Edit",edit_item_path(items) %> || 
-						<%= link_to "Delete" , item_path(items), method: :delete , data:{confirm: "Are you want to delete?"} %>
-						<%= link_to '<button>Send Email</button>'.html_safe,new_item_path %>
-						
-					</div>					
-					<% end %>	
-			</div>
-			<div class="col-md-12">
-				<%= link_to '<button>Add Item</button>'.html_safe,new_item_path %>
-			</div>
+	<div class="col-md-12">
+		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user) %>
+	</div>
+</div><!-- end #wrapper -->
+
 		
 		
 		
