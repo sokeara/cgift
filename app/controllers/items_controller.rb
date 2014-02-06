@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 	def new
 		@items = Item.new
 	end
+	
 	def create
 		@items = Item.new
 		@items.id_item = params[:item][:id_item]
