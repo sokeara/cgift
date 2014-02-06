@@ -41,19 +41,9 @@
 
 					<!-- add item -->
 
-					<% if user.items.count > 0%>
-						<span><%= link_to '<button class="btn btn-success">View item</button>'.html_safe, user_items_path(user) %></span>
-					<% else %>
+					<span><%= link_to '<button class="btn btn-success">View item</button>'.html_safe, user_items_path(user) %></span>
 
 					<span><%= link_to '<button class="btn btn-danger">Delete</button>'.html_safe, user_path(user), method: :delete, data: {confirm: "Are you sure want to delete this record?"} %></span>
-
-					<% if user.items.count > 0%>
-						<span><%= link_to '<button class="btn btn-success">View Items</button>'.html_safe, user_items_path(user) %></span>
-					<% else %>
-						<span><%= link_to '<button class="btn btn-success">Add Item</button>'.html_safe, new_user_item_path(user) %></span>
-					<% end %>
-
-
 				</td>
 			</tr>
 		<% end %>

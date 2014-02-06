@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 		add_breadcrumb "Item"
 		@user = User.find_by_id(params[:user_id])
 		# @item = @user.items
-		@item = Item.find_by_user_id(params[:user_id])
+		@item = Item.find_all_by_user_id(params[:user_id])
 	end
 
 	def new
