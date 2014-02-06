@@ -39,8 +39,6 @@
 						<span><%= link_to '<button class="btn btn-success">Add Profile</button>'.html_safe, new_user_profile_path(user) %></span>
 					<% end %>
 
-					<!-- add item -->
-
 					<span><%= link_to '<button class="btn btn-success">View item</button>'.html_safe, user_items_path(user) %></span>
 
 					<span><%= link_to '<button class="btn btn-danger">Delete</button>'.html_safe, user_path(user), method: :delete, data: {confirm: "Are you sure want to delete this record?"} %></span>
