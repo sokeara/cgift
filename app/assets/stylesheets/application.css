@@ -88,6 +88,9 @@ h1{
 	width: 150px;
 	height: 168px;
 }
-
+.show_item{
+	background-color:red;
+	border: solid 1px; 
+}
 /*--------------------------- style override ------------------------------*/
 
