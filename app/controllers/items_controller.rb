@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 	def index
 		add_breadcrumb "Home", users_path
 		add_breadcrumb "Item"
-		
+
 		@user = User.find_by_id(params[:user_id])
 		# @item = @user.items
 		@item = Item.find_all_by_user_id(params[:user_id])
@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
 	def new
 		add_breadcrumb "Home", users_path
 		add_breadcrumb "Add New item"
+		
 		@user = User.find_by_id(params[:user_id])
 		@item = Item.new
 	end

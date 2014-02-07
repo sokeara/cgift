@@ -5,12 +5,12 @@
 		<tr>
 			<td><%= u.label :first_name %></td>
 			<td>:</td>
-			<td><%= u.text_field :first_name, :placeholder => 'Enter first name' %></td>
+			<td><%= u.text_field :first_name, :placeholder => 'Enter first name', class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= u.label :last_name %></td>
 			<td>:</td>
-			<td><%= u.text_field :last_name, :placeholder => 'Enter last name' %></td>
+			<td><%= u.text_field :last_name, :placeholder => 'Enter last name', class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= u.label :gender %></td>
@@ -25,28 +25,28 @@
 		<tr>
 			<td><%= u.label :username %></td>
 			<td>:</td>
-			<td><%= u.text_field :username, :placeholder => 'Enter username' %></td>
+			<td><%= u.text_field :username, :placeholder => 'Enter username', class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= u.label :password %></td>
 			<td>:</td>
-			<td><%= u.password_field :password, :placeholder => 'Enter password' %></td>
+			<td><%= u.password_field :password, :placeholder => 'Enter password', class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= u.label :email %></td>
 			<td>:</td>
-			<td><%= u.email_field :email, :placeholder => 'Enter email address' %></td>
+			<td><%= u.email_field :email, :placeholder => 'Enter email address', class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= label_tag 'Phone Number' %></td>
 			<td>:</td>
-			<td><%= u.text_field :phone_num, :placeholder => 'Enter phone number' %></td>
+			<td><%= u.text_field :phone_num, :placeholder => 'Enter phone number', class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= u.label :address %></td>
 			<td>:</td>
 			<td>
-				<%= u.text_area :address, :placeholder => 'Write your address here...', size: "50x5" %>
+				<%= u.text_area :address, :placeholder => 'Write your address here...', size: "50x5", class: "form-control" %>
 			</td>
 		</tr>
 		<tr>

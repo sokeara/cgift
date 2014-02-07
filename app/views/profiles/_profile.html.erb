@@ -1,35 +1,35 @@
 <%= form_for [@user,@profile] do |p| %>
 <div>
-	<table>
+	<table align="center">
 		<tr>
 			<td><%= label_tag 'Date of birth' %></td>
 			<td>:</td>
-			<td><%= p.text_field :dob %></td>
+			<td><%= p.text_field :dob, class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= label_tag 'Place of birth' %></td>
 			<td>:</td>
-			<td><%= p.text_field :pob %></td>
+			<td><%= p.text_field :pob, class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= p.label :skills %></td>
 			<td>:</td>
-			<td><%= p.text_field :skills %></td>
+			<td><%= p.text_field :skills, class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= p.label :favorite %></td>
 			<td>:</td>
-			<td><%= p.text_field :favorite %></td>
+			<td><%= p.text_field :favorite, class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= p.label :dream %></td>
 			<td>:</td>
-			<td><%= p.text_field :dream %></td>
+			<td><%= p.text_field :dream, class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= p.label :current_job %></td>
 			<td>:</td>
-			<td><%= p.text_field :current_job %></td>
+			<td><%= p.text_field :current_job, class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td colspan="3">

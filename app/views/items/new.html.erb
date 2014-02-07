@@ -1,25 +1,26 @@
 <div id='wrapper'>
 	<center>
-		<h1>Add new item</h1>
+	<h1>Add new item</h1>
+	<%= form_for [@user, @item], :html => { :multipart => true } do |i| %>
 		<table>
-			<%= form_for [@user, @item], :html => { :multipart => true } do |i| %>
-				<tr>
-					<td><%= i.label :name_item %></td>
-					<td>:</td>
-					<td><%= i.text_field :name_item %></td>
-				</tr>
-				<tr>
-					<td><%= label_tag 'Upload item' %></td>
-					<td>:</td>
-					<td><%= i.file_field :img_item %></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td><%= i.submit %></td>
-				</tr>
-			<% end %>
+			<tr>
+				<td><%= i.label :name_item %></td>
+				<td>:</td>
+				<td><%= i.text_field :name_item, class: "form-control" %></td>
+			</tr>
+			<tr>
+				<td><%= label_tag 'Upload item' %></td>
+				<td>:</td>
+				<td><%= i.file_field :img_item %></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<%= i.submit "Submit", class: "btn btn-info" %>
+					<%= link_to '<input value="Back" type="button" class="btn btn-info" />'.html_safe, users_path %>
+				</td>
+			</tr>
 		</table>
+	<% end %>
 	</center>
 </div><!-- end #wrapper -->
 
