@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
+
 	def index
 		add_breadcrumb "Home", users_path
 		add_breadcrumb "Item"
+		
 		@user = User.find_by_id(params[:user_id])
 		# @item = @user.items
 		@item = Item.find_all_by_user_id(params[:user_id])
@@ -15,18 +17,18 @@ class ItemsController < ApplicationController
 	end
 
 	def create
-		@item = Item.find_by_id(params[:user_id])
-		@item.id_item = params[:item][:id_item]
+		@item = Item.new
+		@user = User.find_by_id(params[:user_id])
+		@item.user_id = params[:user_id]
 		@item.name_item = params[:item][:name_item]
 		@item.img_item = params[:item][:img_item]
-		@item.save
 		if @item.save
 			flash[:notice] = "Data sucessful to save in our system!"
-			redirect_to items_path
+			redirect_to user_items_path(@user)
 		else
 			flash[:error] = "Data not correct!"	
 			flash[:notice] = "Please try again!"
-			redirect_to items_path
+			redirect_to user_items_path(@user)
 		end
 	end
 	def edit

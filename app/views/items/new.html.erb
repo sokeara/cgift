@@ -1,6 +1,6 @@
 <div id='wrapper'>
 	<center>
-		<h1>Add new item form</h1>
+		<h1>Add new item</h1>
 		<table>
 			<%= form_for [@user, @item], :html => { :multipart => true } do |i| %>
 				<tr>
@@ -11,8 +11,7 @@
 				<tr>
 					<td><%= label_tag 'Upload item' %></td>
 					<td>:</td>
-					<td><%= i.file_field :img_item %>
-			</td>
+					<td><%= i.file_field :img_item %></td>
 				</tr>
 				<tr>
 					<td></td>
