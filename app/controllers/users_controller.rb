@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 		@user.phone_num = params[:user][:phone_num]
 		@user.address = params[:user][:address]
 		@user.avatar = params[:user][:avatar]
+		@user.img_item = params[:user][:img_item]
 		
 		if @user.save
 			flash.notice = "#{@user.username} has been created successfully!"
