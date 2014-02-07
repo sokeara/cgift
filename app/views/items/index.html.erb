@@ -1,5 +1,10 @@
 <div id="wrapper">
 	<h3><%= "There are #{@item.count} item(s)" %></h3>
+	<div class="col-md-12">
+		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user) , :class => "addd_item" %>
+	
+	</div>
+
 
 	<% if @item.count > 0 %>
 		<% @item.each do |items|%>
@@ -7,18 +12,15 @@
 				<%= image_tag items.img_item, :class => "img-rounded", :style => "width: 350px; height: 200px;"%>
 				<center><%= items.name_item %><br/></center>
 				<%= link_to "Edit", edit_user_item_path(@user, items) %> || 
-				<%= link_to "Delete" , user_item_path(@user, items), method: :delete , data:{confirm: "Are you want to delete?"} %>
-				<%= link_to '<button>Send Email</button>'.html_safe, new_user_item_path %>
+				<%= link_to "Delete" , user_item_path(@user, items), method: :delete , data:{confirm: "Are you want to delete?"} %> ||
+				<%= link_to 'Email'.html_safe, new_user_item_path %>
 				
 			</div>					
 		<% end %>
+		<br />
 	<% end %>	
 
-	<div class="col-md-12">
-		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user) %>
-	</div>
-	<div class="show_item">Helloßß</div>
-	 
+	
 	 
 </div><!-- end #wrapper -->
 
