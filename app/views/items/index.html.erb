@@ -4,7 +4,7 @@
 	<% if @item.count > 0 %>
 		<% @item.each do |items|%>
 			<div class="col-md-2" id="image">
-				<%= image_tag(items.img_item) %>
+				<%= image_tag items.img_item, :class => "img-rounded", :style => "width: 350px; height: 200px;"%>
 				<center><%= items.name_item %><br/></center>
 				<%= link_to "Edit", edit_user_item_path(@user, items) %> || 
 				<%= link_to "Delete" , user_item_path(@user, items), method: :delete , data:{confirm: "Are you want to delete?"} %>
@@ -18,7 +18,7 @@
 		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user) %>
 	</div>
 	<div class="show_item">Helloßß</div>
-	  <div><img src="assets/images/1.jpg" class="img-polaroid"></div>
+	 
 	 
 </div><!-- end #wrapper -->
 
