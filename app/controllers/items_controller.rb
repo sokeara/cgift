@@ -51,4 +51,9 @@ class ItemsController < ApplicationController
 		redirect_to items_path
 		flash.notice = "Delete sucessfully!"
 	end
+
+	def send_to()
+		
+	end
+
 end
