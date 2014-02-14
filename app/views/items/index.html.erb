@@ -1,26 +1,27 @@
 <div id="wrapper">
 	<h3><%= "There are #{@item.count} item(s)" %></h3>
-	<div class="col-md-12">
-		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user) , :class => "addd_item" %>
-	
-	</div>
 
+	<div class="col-md-12">
+		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user), :class => "addd_item" %>
+	</div>
 
 	<% if @item.count > 0 %>
 		<% @item.each do |items|%>
-			<div class="col-md-2" id="image">
-				<%= image_tag items.img_item, :class => "img-rounded", :style => "width: 350px; height: 200px;"%>
-				<center><%= items.name_item %><br/></center>
-				<%= link_to "Edit", edit_user_item_path(@user, items) %> || 
-				<%= link_to "Delete" , user_item_path(@user, items), method: :delete , data:{confirm: "Are you want to delete?"} %> ||
-				<%= link_to 'Email'.html_safe, new_user_item_path %>
+			<div class="col-md-2">
+				<div class="image">
+					<p><%= image_tag items.img_item, :class => "img-responsive", :class => "img-rounded", :style => "width: 350px; height: 160px;"%></p>
+					<center>
+					<p><%= items.name_item %></p>
+					<%= link_to "<button class='btn-info'>Edit</button>".html_safe, edit_user_item_path(@user, items) %>
+					<%= link_to "<button class='btn-info'>Delete</button>".html_safe, user_items_path(@user, items), method: :delete , data:{confirm: "Are you want to delete?"} %>
+					<%= link_to "<button class='btn-info'>Mail</button>".html_safe, new_user_item_path %>
+					</center>
+				</div>
 				
 			</div>					
 		<% end %>
 		<br />
 	<% end %>	
-
-	
 	 
 </div><!-- end #wrapper -->
 
