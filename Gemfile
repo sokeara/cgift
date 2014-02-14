@@ -47,7 +47,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+<<<<<<< HEAD
 # Use RSpec Gem to do TDD testing on test environment
+=======
+>>>>>>> 635f54be93d78ee89836507e65876aa360ce802e
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
 end
