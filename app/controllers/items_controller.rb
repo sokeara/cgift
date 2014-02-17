@@ -33,21 +33,21 @@ class ItemsController < ApplicationController
 		end
 	end
 	def edit
+		@user = User.find_by_id(params[:user_id])
 		@item = Item.find_by_id(params[:id])
 	end
 	def update
+		@user = User.find_by_id(params[:id])
 		@item = Item.find_by_id(params[:id])
-		@item.id_item = params[:item][:id_item]
 		@item.name_item = params[:item][:name_item]
 		@item.img_item = params[:item][:img_item]
 		@item.save
-
-		redirect_to items_path
+		redirect_to user_items_path
 	end
 	def destroy
 		item = Item.find_by_id(params[:id])
 		item.destroy
-		redirect_to items_path
+		redirect_to user_items_path
 		flash.notice = "Sucessful deleted!"
 	end
 end

@@ -1,18 +1,15 @@
-<%= form_for @item do |items| %>
-<p>
-	<%= items.label :id_item %></br>
-	<%= items.text_field :id_item %>
-</p>
+
+<%= form_for [@user, @item] do |items| %>
 <p>
 	<%= items.label :name_item %></br>
 	<%= items.text_field :name_item %>
 </p>
 <p>
 	<%= items.label :img_item %></br>
-	<%= items.text_field :img_item %>
+	<%= items.file_field :img_item %>
 </p>
 <p>
 	<%= items.submit %></br>
-
 </p>
+
 <% end %>
