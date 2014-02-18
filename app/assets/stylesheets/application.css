@@ -19,7 +19,7 @@
 	margin: 15px auto 0;
 	min-height: 500px;
 	padding: 0px 10px 10px 10px;
-	background-color: whitesmoke;
+	overflow: hidden;
 	/*background-color: #ddd;
 	opacity:0.7;
 	filter:alpha(opacity=40);  For IE8 and earlier */
@@ -90,10 +90,16 @@ h1{
 	height: 168px;
 }
 .addd_item{
-	float: right;
+	/*float: right;*/
 	padding-bottom: 10px;
 }
 
+.image{
+	border: 1px solid #FDDE05;
+	padding: 10px;
+	margin-top: 15px;
+	border-radius: 3px;
+}
 
 /*--------------------------- style override ------------------------------*/
 
