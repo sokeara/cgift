@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 # install boostrap
 gem 'bootstrap-sass'
-group :development do
+group :development, :test do
   gem 'rails_layout'
+  gem 'rspec-rails', '~> 3.0.0.beta'
 end
-
 # install barcrumbs
 gem "breadcrumbs_on_rails"
 
