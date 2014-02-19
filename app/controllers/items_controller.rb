@@ -50,8 +50,24 @@ class ItemsController < ApplicationController
 		flash.notice = "Delete sucessfully!"
 	end
 
-	def send_to()
-		
+	def send_to
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Item"
+		# Get user id when click on Mail button throw to form sending gift
+		@userID = params[:user_id]
+
+		if params[:post]
+			@user = User.find_by_id(params[:user_id])
+			
+			@item = Item.new
+			@item = Item.find_by_id(params[:id])
+			@item.user_id = params[:post][:user_id]
+
+			if @item.save
+				flash.notice = "You sending gift to #{@user.last_name.camelize} #{@user.first_name.capitalize} sucessfully!"
+				redirect_to user_items_path(@user)
+			end
+		end
 	end
 
 end
