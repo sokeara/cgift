@@ -11,12 +11,11 @@ class ItemsController < ApplicationController
 
 	def new
 		add_breadcrumb "Home", users_path
-		add_breadcrumb "Add New item"
+		add_breadcrumb "Add New item"	
 
 		@user = User.find_by_id(params[:user_id])
 		@item = Item.new
 	end
-
 	def create
 		@item = Item.new
 		@user = User.find_by_id(params[:user_id])
@@ -59,7 +58,7 @@ class ItemsController < ApplicationController
 		@userID = params[:user_id]
 
 		if params[:post]
-			@user = User.find_by_id(params[:post][:user_id])
+			@user = User.find_by_id(params[:user_id])
 			
 			@item = Item.new
 			@item = Item.find_by_id(params[:id])
