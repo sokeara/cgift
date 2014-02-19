@@ -11,12 +11,7 @@ class ItemsController < ApplicationController
 
 	def new
 		add_breadcrumb "Home", users_path
-<<<<<<< HEAD
 		add_breadcrumb "Add New item"	
-=======
-		add_breadcrumb "Add New item"
-
->>>>>>> dc1c3020927e8925ce0c04037ca21a911cef9235
 		@user = User.find_by_id(params[:user_id])
 		@item = Item.new
 	end
