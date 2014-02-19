@@ -55,18 +55,21 @@ class ItemsController < ApplicationController
 		add_breadcrumb "Home", users_path
 		add_breadcrumb "Item"
 		# Get user id when click on Mail button throw to form sending gift
+		# for ignore on select drop down
 		@userID = params[:user_id]
 
 		if params[:post]
-			@user = User.find_by_id(params[:user_id])
+			@currentUser = User.find_by_id(params[:user_id])
+			@user = User.find_by_id(params[:post][:user_id])
 			
 			@item = Item.new
 			@item = Item.find_by_id(params[:id])
 			@item.user_id = params[:post][:user_id]
+			@item.recent = true
 
 			if @item.save
 				flash.notice = "You sending gift to #{@user.last_name.camelize} #{@user.first_name.capitalize} sucessfully!"
-				redirect_to user_items_path(@user)
+				redirect_to user_items_path(@currentUser)
 			end
 		end
 	end
