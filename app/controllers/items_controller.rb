@@ -10,15 +10,11 @@ class ItemsController < ApplicationController
 	end
 
 	def new
-		add_breadcrumb "Home", users_path
-<<<<<<< HEAD
-
-		add_breadcrumb "Add New item"
-=======
-		add_breadcrumb "Add New item"	
->>>>>>> 42c657eac75d9d30bc88eca6c3469924a1c06a12
 		@user = User.find_by_id(params[:user_id])
 		@item = Item.new
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Item", user_items_path(@user)
+		add_breadcrumb "Add New item"	
 	end
 	def create
 		@item = Item.new
@@ -38,6 +34,9 @@ class ItemsController < ApplicationController
 	def edit
 		@user = User.find_by_id(params[:user_id])
 		@item = Item.find_by_id(params[:id])
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Item", user_items_path(@user)
+		add_breadcrumb "Edit item"
 	end
 	def update
 		@user = User.find_by_id(params[:id])

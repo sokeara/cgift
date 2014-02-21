@@ -1,15 +1,26 @@
+<div id="wrapper">
+	<h1 align="center">Edit item</h1>
+	<%= form_for [@user, @item] do |items| %>
+		<table align="center">
+			<tr>
+				<td><%= items.label :name_item %></td>
+				<td>:</td>
+				<td><%= items.text_field :name_item, class: "form-control" %></td>
+			</tr>
+			<tr>
+				<td><%= label_tag 'Upload item' %></td>
+				<td>:</td>
+				<td><%= items.file_field :img_item %></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td colspan="3">
+					<%= items.submit "Submit", class: "btn btn-info" %>
+					<%= link_to '<input value="Back" type="button" class="btn btn-info" />'.html_safe, user_items_path(@user) %>
+				</td>
+			</tr>
+		</table>
 
-<%= form_for [@user, @item] do |items| %>
-<p>
-	<%= items.label :name_item %></br>
-	<%= items.text_field :name_item %>
-</p>
-<p>
-	<%= items.label :img_item %></br>
-	<%= items.file_field :img_item %>
-</p>
-<p>
-	<%= items.submit %></br>
-</p>
-
-<% end %>
+	<% end %>
+</div><!-- end #wrapper -->
