@@ -11,8 +11,12 @@ class ItemsController < ApplicationController
 
 	def new
 		add_breadcrumb "Home", users_path
+<<<<<<< HEAD
 
 		add_breadcrumb "Add New item"
+=======
+		add_breadcrumb "Add New item"	
+>>>>>>> 42c657eac75d9d30bc88eca6c3469924a1c06a12
 		@user = User.find_by_id(params[:user_id])
 		@item = Item.new
 	end
@@ -43,6 +47,7 @@ class ItemsController < ApplicationController
 		@item.save
 		redirect_to user_items_path
 	end
+
 	def destroy
 		
 		item = Item.find_by_id(params[:id])
@@ -51,8 +56,36 @@ class ItemsController < ApplicationController
 		flash.notice = "Sucessful deleted!"
 	end
 
-	def send_to()
-		
+	def show
+	    @item_popup = Item.find_by_id(params[:id])
+	    respond_to do |format|
+	        format.html # show.html.erb
+	        format.js # show.js.erb
+	        format.json { render json: @item_popup }
+	    end
+	end
+
+	def send_to
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Item"
+		# Get user id when click on Mail button throw to form sending gift
+		# for ignore on select drop down
+		@userID = params[:user_id]
+
+		if params[:post]
+			@currentUser = User.find_by_id(params[:user_id])
+			@user = User.find_by_id(params[:post][:user_id])
+			
+			@item = Item.new
+			@item = Item.find_by_id(params[:id])
+			@item.user_id = params[:post][:user_id]
+			@item.recent = true
+
+			if @item.save
+				flash.notice = "You sending gift to #{@user.last_name.camelize} #{@user.first_name.capitalize} sucessfully!"
+				redirect_to user_items_path(@currentUser)
+			end
+		end
 	end
 
 end

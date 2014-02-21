@@ -1,7 +1,16 @@
 Cgift::Application.routes.draw do
   resources :users do
     resources :profiles
-    resources :items
+    resources :items do
+      post 'send_to', on: :member
+      # OR
+      # member do
+      #   post 'send_to'
+      #   post :activate
+      # end
+      get 'recent_item', on: :collection
+
+    end
   end
   # resources :items
 

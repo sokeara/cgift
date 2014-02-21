@@ -11,6 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+/*
+ *= require jquery.ui.all
+ */
+
+ /*
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
+ */
+
  #wrapper{
 	width: 95%;
 	height: auto;
@@ -101,5 +111,21 @@ h1{
 	border-radius: 3px;
 }
 
+/*--------------------------- style popup ------------------------------*/
+
+.modal-body img {
+	border-radius: 5px;
+	width: 60%; 
+	height: 60%;
+	background-color: white; 
+	margin: 30px auto auto;
+}
+
+.col-md-12 h3 {
+	color: #563D7C;
+}
+
 /*--------------------------- style override ------------------------------*/
+
+
 

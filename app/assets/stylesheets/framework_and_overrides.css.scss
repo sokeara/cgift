@@ -47,3 +47,23 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+.modal-header{
+    border: 0 solid;
+    color: #FFFFFF;
+    margin: 0 auto;
+    min-height: 16.4286px;
+    padding: 14px;
+    width: 60%;
+}
+
+.modal-body {
+    border: 0px solid #FF0000;
+    padding: 0px;
+    position: relative;
+}
+
+.modal-header .close {
+    margin-top: 0;
+    color: #FFFFFF;
+}
+

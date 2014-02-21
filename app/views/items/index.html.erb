@@ -1,7 +1,6 @@
 <div id="wrapper">
-	<h3><%= "There are #{@item.count} item(s)" %></h3>
-
 	<div class="col-md-12">
+<<<<<<< HEAD
 		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user) , :class => "addd_item" %>	
 	    <table>
 			<tr>
@@ -9,10 +8,18 @@
 				<td><button class="btn btn-info">search</button></td>
 			</tr>
 		</table>
+=======
+		<h3><%= "#{@user.first_name} #{@user.last_name} has #{@item.count} item(s)" %></h3>
+	</div>	
+	<div class="col-md-12">
+		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user), :class => "addd_item" %>
+		<%= link_to '<button class="btn btn-info">Back</button>'.html_safe, users_path %>
+>>>>>>> 42c657eac75d9d30bc88eca6c3469924a1c06a12
 	</div>
 	<% if @item.count > 0 %>
 		<% @item.each do |items|%>
 			<div class="col-md-2" id="image">
+<<<<<<< HEAD
 				<% if items.img_item? %>
 				<%= image_tag items.img_item, :class => "img-rounded", :style => "width: 350px; height: 200px;"%>
 				<% else %>
@@ -33,8 +40,29 @@
 	<% end %>
 	<% end %>
 </div><!-- end #wrapper -->
+=======
+				<div class="image">
+					<% if items.img_item? %>
+						<p><%= link_to image_tag("#{items.img_item}", :class => "img-responsive", :class => "img-rounded", :style => "width: 350px; height: 160px;"), user_item_path(@user, items), remote: true %></p>
+					<% else %>
+					 <%= image_tag 'missing.png', :class => "img-rounded", :style => "width:350px; height: 200px;"%>
+					<% end %>
+	        		<center>
+						<p><%= items.name_item %></p>
+						<%= link_to "<button class='btn-info'>Edit</button>".html_safe, edit_user_item_path(@user, items) %>
+						<%= link_to "<button class='btn-info'>Delete</button>".html_safe, user_items_path(@user, items), method: :delete , data:{confirm: "Are you want to delete?"} %>
+						<%= link_to "<button class='btn-info'>Mail</button>".html_safe, send_to_user_item_path(@user, items), method: :post %>
+					</center>
+				</div>				
+			</div>
+    <% end %>
+	<% end %>	
+	 
+</div>
+<%= render partial: 'modal' %>
+<!-- end #wrapper -->
+>>>>>>> 42c657eac75d9d30bc88eca6c3469924a1c06a12
 
-		
 		
 		
 
