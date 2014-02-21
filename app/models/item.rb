@@ -7,5 +7,5 @@ class Item < ActiveRecord::Base
   	validates_attachment_content_type :img_item, :content_type => ['image/jpeg', 'image/png', 'image/jpg']
 
 	# validates:id_item,
-	validates :img_item, presence: true
+	# validates :img_item, presence: true
 end
