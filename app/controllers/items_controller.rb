@@ -44,11 +44,22 @@ class ItemsController < ApplicationController
 
 		redirect_to items_path
 	end
+
 	def destroy
 		
 		item = Item.find_by_id(params[:id])
 		item.destroy
 		redirect_to items_path
 		flash.notice = "Delete sucessfully!"
+	end
+
+	def show
+	    @item_popup = Item.find_by_id(params[:id])
+
+	    respond_to do |format|
+	        format.html # show.html.erb
+	        format.js # show.js.erb
+	        format.json { render json: @item_popup }
+	    end
 	end
 end
