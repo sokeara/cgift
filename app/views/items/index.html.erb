@@ -19,7 +19,7 @@
 	        		<center>
 						<p><%= items.name_item %></p>
 						<%= link_to "<button class='btn-info'>Edit</button>".html_safe, edit_user_item_path(@user, items) %>
-						<%= link_to "<button class='btn-info'>Delete</button>".html_safe, user_items_path(@user, items), method: :delete , data:{confirm: "Are you want to delete?"} %>
+						<%= link_to "<button class='btn-info'>Delete</button>".html_safe, user_item_path(@user, items), method: :delete , data:{confirm: "Are you want to delete?"} %>
 						<%= link_to "<button class='btn-info'>Mail</button>".html_safe, send_to_user_item_path(@user, items), method: :post %>
 					</center>
 				</div>				
