@@ -78,8 +78,6 @@ class ItemsController < ApplicationController
 	end
 
 	def send_to
-		add_breadcrumb "Home", users_path
-		add_breadcrumb "Item"
 		# Get user id when click on Mail button throw to form sending gift
 		# for ignore on select drop down
 		@userID = params[:user_id]
@@ -98,6 +96,9 @@ class ItemsController < ApplicationController
 				redirect_to user_items_path(@currentUser)
 			end
 		end
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Item", user_items_path(@userID)
+		add_breadcrumb "Send gift"
 	end
 
 end
