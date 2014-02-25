@@ -14,7 +14,7 @@
 					<% if items.img_item? %>
 						<%= link_to image_tag("#{items.img_item}", :class => "img-responsive", :class => "img-rounded", :style => "width: 350px; height: 160px;"), user_item_path(@user, items), remote: true %>
 					<% else %>
-						<%= image_tag 'missing.png', :class => "img-responsive", :class => "img-responsiveounded", :style => "width:350px; height: 160px;"%>
+						<%= image_tag 'missing.jpg', :class => "img-responsive", :class => "img-responsiveounded", :style => "width:350px; height: 160px;"%>
 					<% end %>
 	        		<center>
 						<p><%= items.name_item %></p>
