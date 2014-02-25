@@ -126,6 +126,16 @@ h1{
 }
 
 /*--------------------------- style override ------------------------------*/
+#action-recent-own {
+	display: inline;
+}
 
+.btn-own {
+	margin-left: 110px;
+}
+
+.btn-recent {
+	float: left;
+}
 
 

@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20140220092052) do
     t.string   "img_item_content_type"
     t.integer  "img_item_file_size"
     t.datetime "img_item_updated_at"
-    t.integer  "id_item"
     t.boolean  "recent",                default: false
+    t.integer  "id_item"
   end
 
   create_table "profiles", force: true do |t|
