@@ -12,8 +12,6 @@ class UsersController < ApplicationController
 	end
 
 	def create
-
-		# @user = User.create(user_params)
 		@user = User.new
 		@user.first_name = params[:user][:first_name]
 		@user.last_name = params[:user][:last_name]
@@ -42,7 +40,6 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find_by_id(params[:id])
-
 		@user.first_name = params[:user][:first_name]
 		@user.last_name = params[:user][:last_name]
 		@user.gender = params[:user][:gender]

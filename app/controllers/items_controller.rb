@@ -3,10 +3,23 @@ class ItemsController < ApplicationController
 	def index
 		add_breadcrumb "Home", users_path
 		add_breadcrumb "Item"
-
+# debugger
 		@user = User.find_by_id(params[:user_id])
-		# @item = @user.items
-		@item = Item.find_all_by_user_id(params[:user_id])
+		
+		if params[:recent] == "true"
+			@items = Item.find_all_by_user_id_and_recent(params[:user_id], true)
+			@items.each do |item|
+				item.recent = false
+				# force to save and return value
+				item.save!
+			end
+		else
+			@items = Item.find_all_by_user_id_and_recent(params[:user_id], false)
+		end
+
+		# @user = User.find_by_id(params[:user_id])
+		# # @item = @user.items
+		# @item = Item.find_all_by_user_id(params[:user_id])
 	end
 
 	def new
