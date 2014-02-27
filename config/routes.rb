@@ -9,6 +9,8 @@ Cgift::Application.routes.draw do
       #   post :activate
       # end
       get 'recent_item', on: :collection
+      # post 'search', on: :member
+      get 'search', on: :collection
 
     end
   end

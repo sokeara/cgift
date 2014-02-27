@@ -1,33 +1,17 @@
 class ItemsController < ApplicationController
+	before_filter	:load_items, only: [:index, :search]
 
 	def index
 		add_breadcrumb "Home", users_path
 		add_breadcrumb "Item"
-# debugger
-		@user = User.find_by_id(params[:user_id])
-		
-		if params[:recent] == "true"
-			@items = Item.find_all_by_user_id_and_recent(params[:user_id], true)
-			@items.each do |item|
-				item.recent = false
-				# force to save and return value
-				item.save!
-			end
-		else
-			@items = Item.find_all_by_user_id_and_recent(params[:user_id], false)
-		end
-
-		# @user = User.find_by_id(params[:user_id])
-		# # @item = @user.items
-		# @item = Item.find_all_by_user_id(params[:user_id])
+		# @item = @user.items
 	end
 
 	def new
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Add New item"	
 		@user = User.find_by_id(params[:user_id])
 		@item = Item.new
-		add_breadcrumb "Home", users_path
-		add_breadcrumb "Item", user_items_path(@user)
-		add_breadcrumb "Add New item"	
 	end
 	def create
 		@item = Item.new
@@ -45,39 +29,38 @@ class ItemsController < ApplicationController
 		end
 	end
 	def edit
-		@user = User.find_by_id(params[:user_id])
 		@item = Item.find_by_id(params[:id])
-		add_breadcrumb "Home", users_path
-		add_breadcrumb "Item", user_items_path(@user)
-		add_breadcrumb "Edit item"
 	end
 	def update
-		@user = User.find_by_id(params[:id])
 		@item = Item.find_by_id(params[:id])
+		@item.id_item = params[:item][:id_item]
 		@item.name_item = params[:item][:name_item]
 		@item.img_item = params[:item][:img_item]
 		@item.save
-		redirect_to user_items_path
+		redirect_to items_path
 	end
-
 	def destroy
 		
 		item = Item.find_by_id(params[:id])
 		item.destroy
-		redirect_to user_items_path
-		flash.notice = "Sucessful deleted!"
+		redirect_to items_path
+		flash.notice = "Delete sucessfully!"
 	end
+	# searching image name
+	# def search
+	# 	@user = User.find_by_id(params[:user_id])
+	# 	@item = Item.new
+	# end
 
-	def show
-	    @item_popup = Item.find_by_id(params[:id])
-	    respond_to do |format|
-	        format.html # show.html.erb
-	        format.js # show.js.erb
-	        format.json { render json: @item_popup }
-	    end
-	end
-
+ #   if params[:search]
+ #        @search = Item.search(params[:search]).order("created_at DESC")
+ #   else
+ #        @search = Item.order("created_at DESC")
+ #    end
+	# end
 	def send_to
+		add_breadcrumb "Home", users_path
+		add_breadcrumb "Item"
 		# Get user id when click on Mail button throw to form sending gift
 		# for ignore on select drop down
 		@userID = params[:user_id]
@@ -96,9 +79,35 @@ class ItemsController < ApplicationController
 				redirect_to user_items_path(@currentUser)
 			end
 		end
-		add_breadcrumb "Home", users_path
-		add_breadcrumb "Item", user_items_path(@userID)
-		add_breadcrumb "Send gift"
 	end
+	 
+	 # def index
+  #   if params[:search]
+  #     @articles = Article.search(params[:search]).order("created_at DESC")
+  #   else
+  #     @articles = Article.order("created_at DESC")
+  #   end
+  # end
+  def search
+  	add_breadcrumb "Home", users_path
+	add_breadcrumb "Item", user_items_path(@user)
+	add_breadcrumb "search"
+  	if params[:find]
+	      @items = Item.find_all_by_name_item(params[:find])
+	      @find_text = params[:find]
+      render :index
+    else
+      @item = Item.order("created_at DESC")
+    end
+
+  end
+
+ private
+
+ def load_items
+ 	@user = User.find_by_id(params[:user_id])
+	@items = Item.find_all_by_user_id(params[:user_id])	
+	@find_text = ""
+ end
 
 end
