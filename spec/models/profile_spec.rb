@@ -16,4 +16,29 @@ describe Profile do
 		Profile.count.should == 1
 	end
 
+	it "Should not blank for place of birth" do
+		profile = Profile.create!(
+			:dob => "15/05/1993",
+			:pob => "Kompong thom",
+			:skills =>"web",
+			:favorite => "fighting",
+			:dream => "famouse person",
+			:current_job => "IT consulting",
+			)
+		Profile.count.should == 1
+	end
+	it "Should require for skills" do
+		profile = Profile.create!(
+			:dob => "15/05/1993",
+			:pob => "Kompong thom",
+			:skills =>"web",
+			:favorite => "fighting",
+			:dream => "famouse person",
+			:current_job => "IT consulting",
+			)
+		Profile.count.should == 1
+	end
+	
+
+
 end
