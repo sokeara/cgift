@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220092052) do
+ActiveRecord::Schema.define(version: 20140227094639) do
 
   create_table "items", force: true do |t|
     t.string   "name_item"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140220092052) do
   end
 
   create_table "profiles", force: true do |t|
-    t.string   "dob"
+    t.date     "dob",         limit: 255
     t.string   "pob"
     t.string   "skills"
     t.string   "favorite"
