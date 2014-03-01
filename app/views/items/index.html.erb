@@ -6,14 +6,15 @@
 		<%= link_to "<button class='btn btn-warning'>Recent (#{ Item.count(:conditions => {:recent => true, :user_id => @user}) })</button>".html_safe, user_items_path(@user)+"?recent=true" %>
 		<%= link_to "<button class='btn btn-success'>Own (#{ Item.count(:conditions => {:recent => false, :user_id => @user}) })</button>".html_safe, user_items_path(@user)+"?recent=false" %>
 		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_user_item_path(@user), :class => "addd_item" %>
-		<%= link_to '<button class="btn btn-info">Back</button>'.html_safe, users_path %>
-	</div>
-	 <div class="input-append">
+	    <%= link_to '<button class="btn btn-info">Back</button>'.html_safe, users_path %>
+	<!-- <div class="input-append"> -->
 		 <%= form_tag search_user_items_path, method: "get", class: "navbar-form", id: "search-form",value: "Search" do %>
 		 	<input name="find" value= "<%= @find_text %>" type="textfield" />
 		 	<input type="submit", value= "Search">
 		 <% end %>
-	 </div>
+	<!--  </div> -->
+	</div>
+
 	<% if @items.count > 0 %>
 		<% @items.each do |item|%>
 			<div class="col-md-2" id="image">
