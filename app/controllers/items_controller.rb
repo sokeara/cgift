@@ -13,6 +13,17 @@ class ItemsController < ApplicationController
 		@user = User.find_by_id(params[:user_id])
 		@item = Item.new
 	end
+
+	def show
+	    @item_popup = Item.find(params[:id])
+
+	    respond_to do |format|
+	        format.html # show.html.erb
+	        format.js # show.js.erb
+	        format.json { render json: @item_popup }
+	    end
+	end
+
 	def create
 		@item = Item.new
 		@user = User.find_by_id(params[:user_id])
