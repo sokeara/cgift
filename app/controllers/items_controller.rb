@@ -104,7 +104,8 @@ class ItemsController < ApplicationController
 	add_breadcrumb "Item", user_items_path(@user)
 	add_breadcrumb "search"
   	if params[:find]
-	      @items = Item.find_all_by_name_item(params[:find])
+	      # @items = Item.find_all_by_name_item(params[:find])
+	      @items = Item.find_all_by_name_item_and_user_id(params[:find], params[:user_id])
 	      @find_text = params[:find]
       render :index
     else
