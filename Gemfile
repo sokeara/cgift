@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 # install boostrap
+gem 'whenever'
 gem 'bootstrap-sass'
 group :development, :test do
   gem 'rails_layout'
