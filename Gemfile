@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+ # install whenever
+gem 'whenever'
 # install boostrap
 gem 'bootstrap-sass'
 group :development, :test do
