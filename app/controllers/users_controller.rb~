@@ -1,27 +1,27 @@
-class UsersController < ApplicationController
+class PeopleController < ApplicationController
 
 	def index
-		@users = User.all
+		@users = Person.all
 		add_breadcrumb "Home", users_path
 	end
 
 	def new
-		@user = User.new
+		@user = Person.new
 		add_breadcrumb "Home", users_path
 		add_breadcrumb "Add new"
 	end
 
 	def create
-		@user = User.new
-		@user.first_name = params[:user][:first_name]
-		@user.last_name = params[:user][:last_name]
-		@user.gender = params[:user][:gender]
-		@user.username = params[:user][:username]
-		@user.password = params[:user][:password]
-		@user.email = params[:user][:email]
-		@user.phone_num = params[:user][:phone_num]
-		@user.address = params[:user][:address]
-		@user.avatar = params[:user][:avatar]
+		@user = Person.new
+		@user.first_name = params[:person][:first_name]
+		@user.last_name = params[:person][:last_name]
+		@user.gender = params[:person][:gender]
+		@user.username = params[:person][:username]
+		@user.password = params[:person][:password]
+		@user.email = params[:person][:email]
+		@user.phone_num = params[:person][:phone_num]
+		@user.address = params[:person][:address]
+		@user.avatar = params[:person][:avatar]
 		
 		if @user.save
 			flash.notice = "#{@user.username} has been created successfully!"
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		@user = User.find_by_id(params[:id])
+		@user = Person.find_by_id(params[:id])
 		@user.first_name = params[:user][:first_name]
 		@user.last_name = params[:user][:last_name]
 		@user.gender = params[:user][:gender]
