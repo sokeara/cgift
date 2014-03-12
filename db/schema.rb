@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227094639) do
+ActiveRecord::Schema.define(version: 20140312085430) do
 
   create_table "items", force: true do |t|
     t.string   "name_item"
@@ -26,19 +26,7 @@ ActiveRecord::Schema.define(version: 20140227094639) do
     t.integer  "id_item"
   end
 
-  create_table "profiles", force: true do |t|
-    t.date     "dob",         limit: 255
-    t.string   "pob"
-    t.string   "skills"
-    t.string   "favorite"
-    t.string   "dream"
-    t.string   "current_job"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
+  create_table "people", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "gender"
@@ -53,6 +41,18 @@ ActiveRecord::Schema.define(version: 20140227094639) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "profiles", force: true do |t|
+    t.date     "dob",         limit: 255
+    t.string   "pob"
+    t.string   "skills"
+    t.string   "favorite"
+    t.string   "dream"
+    t.string   "current_job"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
