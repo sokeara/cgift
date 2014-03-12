@@ -23,7 +23,7 @@ class Person < ActiveRecord::Base
 
   def check_duplicate_email
     if Person.find_by_email(email)
-      if Person.find(id).email == email
+      if User.find(id).email == email
         return true
       else
         return false

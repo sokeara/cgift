@@ -29,14 +29,14 @@
 				<td><%= person.phone_num %></td>
 				<td><%= person.address %></td>
 				<td colspan="2">
-					<span><%= link_to '<button class="btn btn-success">Edit</button>'.html_safe, edit_person_path(user) %></span>
+					<span><%= link_to '<button class="btn btn-success">Edit</button>'.html_safe, edit_person_path(person) %></span>
 
 					<!-- add and view profile -->
 
 					<% if person.profiles.count > 0%>
-						<span><%= link_to '<button class="btn btn-success">View Profile</button>'.html_safe, person_profiles_path(user) %></span>
+						<span><%= link_to '<button class="btn btn-success">View Profile</button>'.html_safe, person_profiles_path(person) %></span>
 					<% else %>
-						<span><%= link_to '<button class="btn btn-success">Add Profile</button>'.html_safe, new_person_profile_path(user) %></span>
+						<span><%= link_to '<button class="btn btn-success">Add Profile</button>'.html_safe, new_person_profile_path(person) %></span>
 					<% end %>
 
 					<span><%= link_to '<button class="btn btn-success">View item</button>'.html_safe, person_items_path(person) %></span>

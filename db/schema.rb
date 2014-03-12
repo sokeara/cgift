@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312085430) do
+ActiveRecord::Schema.define(version: 20140312094148) do
 
   create_table "items", force: true do |t|
     t.string   "name_item"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "person_id"
     t.string   "img_item_file_name"
     t.string   "img_item_content_type"
     t.integer  "img_item_file_size"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140312085430) do
     t.string   "favorite"
     t.string   "dream"
     t.string   "current_job"
-    t.integer  "user_id"
+    t.integer  "person_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -4,7 +4,7 @@
 		<tr>
 			<td><%= label_tag 'Date of birth' %></td>
 			<td>:</td>
-			<td><%= p.text_field :dob, :id => "datepicker", :value => Date.today, class: "form-control" %></td>
+			<td><%= p.text_field :pob, :id => "datepicker", :value => Date.today, class: "form-control" %></td>
 		</tr>
 		<tr>
 			<td><%= label_tag 'Place of birth' %></td>

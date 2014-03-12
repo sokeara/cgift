@@ -117,7 +117,7 @@ class ItemsController < ApplicationController
  private
 
  def load_items
- 	@person = Person.find_by_id(params[:person_id])
+ 	@user = Person.find_by_id(params[:person_id])
 	@items = Item.find_all_by_person_id(params[:person_id])	
 	@find_text = ""
  end

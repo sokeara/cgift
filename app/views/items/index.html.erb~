@@ -3,7 +3,7 @@
 		<h3><%= "#{@person.first_name} #{@person.last_name} has #{@items.count} item(s)" %></h3>
 	</div>	
 	<div class="col-md-12">
-		<%= link_to "<button class='btn btn-warning'>Recent (#{ Item.count(:conditions => {:recent => true, :person_id => @person}) })</button>".html_safe, person_items_path(@person)+"?recent=true" %>
+		<%= link_to "<button class='btn btn-warning'>Recent (#{ Person.count(:conditions => {:recent => true, :person_id => @person}) })</button>".html_safe, person_items_path(@person)+"?recent=true" %>
 		<%= link_to "<button class='btn btn-success'>Own (#{ Item.count(:conditions => {:recent => false, :person_id => @person}) })</button>".html_safe, person_items_path(@person)+"?recent=false" %>
 		<%= link_to '<button class="btn btn-info">Add Item</button>'.html_safe, new_person_item_path(@person), :class => "addd_item" %>
 	    <%= link_to '<button class="btn btn-info">Back</button>'.html_safe, people_path %>

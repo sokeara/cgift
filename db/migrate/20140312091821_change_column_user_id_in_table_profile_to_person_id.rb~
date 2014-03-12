@@ -1,0 +1,4 @@
+class ChangeColumnUserIdInTableProfileToPersonId < ActiveRecord::Migration
+  def change
+  end
+end

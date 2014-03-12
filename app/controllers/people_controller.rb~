@@ -67,7 +67,7 @@ class PeopleController < ApplicationController
 		@person = Person.find_by_id(params[:id])
 		@person.destroy
 		redirect_to people_path
-		flash.notice = "#{@person.username} has been deleted!"
+		flash.notice = "#{@person.personname} has been deleted!"
 	end
 
 	def show

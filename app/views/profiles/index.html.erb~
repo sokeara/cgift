@@ -62,7 +62,7 @@
 		<tr>
 			<td colspan="3">
 				<%= link_to '<button type="button" class="btn btn-info">Edit</button>'.html_safe, edit_person_profile_path(@person, @profile) %>
-				<%= link_to '<button type="button" class="btn btn-info">Back</button>'.html_safe, people_path %>
+				<%= link_to '<button type="button" class="btn btn-info">Back</button>'.html_safe, users_path %>
 			</td>
 		</tr>
 	</table>

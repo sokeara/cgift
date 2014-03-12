@@ -1,0 +1,4 @@
+class ChangeColumnUserIdInTableItemsToPersonId < ActiveRecord::Migration
+  def change
+  end
+end

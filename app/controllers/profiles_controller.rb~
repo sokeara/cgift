@@ -25,6 +25,7 @@ class ProfilesController < ApplicationController
 		@profile.favorite = params[:profile][:favorite]
 		@profile.dream = params[:profile][:dream]
 		@profile.current_job = params[:profile][:current_job]
+		debugger
 		if @profile.save
 			flash.notice = "Created profile successfully!"
 			redirect_to people_path
