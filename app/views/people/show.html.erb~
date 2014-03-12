@@ -1,5 +1,5 @@
 <div id="wrapper">
-	<div id="form-user">
+	<div id="form-person">
 		<%= render partial: 'users/detail' %>
 		<%= render partial: 'profiles/profile' %>
 	</div>
